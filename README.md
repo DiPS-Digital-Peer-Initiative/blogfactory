@@ -1,24 +1,17 @@
-# README
+# Blogfactory
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## What is this?
+zip-a-dee-do-day!
 
-* Ruby version
+## What you can do
+zip-a-dee-do-dah!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Getting Started
+- Downloading
+    - Clone this repository with git clone: `git clone https://github.com/SumukhPrasad/Sherlock.git`
+    - Download and copy WOFF2 fonts for *Inter Display* and *Source Serif 4* in the manner specified by [Fonts.md](./Fonts.MD)
+- Setting Up
+    - Set up and install dependencies: `bundle install`
+    - Migrate the database using `rails db:migrate`
+    - Run `rails server` to start up.

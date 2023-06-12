@@ -36,6 +36,26 @@ gem "redis", "~> 4.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
+
+
+# ---------------------------------------- Other Imports -----
+
+# SCSS support
+gem "sassc-rails"
+
+# Linting
+gem 'rubocop', require: false
+gem 'rubocop-rails'
+gem 'rubocop-rspec'
+gem 'rubocop-packaging'
+
+# Users and Authentication
+gem "devise"
+
+# ------------------------------------ End Other Imports -----
+
+
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
