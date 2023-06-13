@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blogfactory</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title></title>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+	<!--
+	
+	Hello there, explorer!
+	Visit https://github.com/DiPS-Digital-Peer-Initiative/blogfactory to see the source code.
 
-  <body>
-    <%= yield %>
-  </body>
+  @sumukhprasad
+
+	 -->
+
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="theme-color" content="">
+
+
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+
+		<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+		<%= javascript_importmap_tags %>
+	</head>
+
+	<body>
+
+	<main>
+
+		<% if notice %>
+			<p class="alert alert-success"><%= notice %></p>
+		<% end %>
+		<% if alert %>
+			<p class="alert alert-danger"><%= alert %></p>
+		<% end %>
+		<%= yield %>
+
+	</main>
+
+	</body>
 </html>

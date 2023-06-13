@@ -51,6 +51,7 @@ gem 'rubocop-packaging'
 
 # Users and Authentication
 gem "devise"
+gem 'activeadmin'
 
 # ------------------------------------ End Other Imports -----
 
