@@ -1,0 +1,10 @@
+development:
+  site_name: 
+    key: "sitename"
+    value: "Blogfactory Title"
+  org_name:
+    key: "orgname"
+    value: "Blogfactory"
+  org_desc:
+    key: "orgdesc"
+    value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at egestas diam, nec congue nisl. Ut mattis at libero nec eleifend. Sed blandit mattis dui, sit amet fermentum augue facilisis eu. Maecenas egestas ipsum felis, ut sagittis lectus facilisis vel. Donec non risus volutpat, pretium lacus id, pulvinar tellus. Vivamus viverra nisi quis vestibulum consequat. Nullam bibendum purus vel vulputate ultrices. Etiam pellentesque libero eget metus eleifend, sed vehicula lectus ullamcorper. Ut metus eros, placerat in dolor non, mollis suscipit mauris. Proin scelerisque maximus magna in auctor. Quisque diam libero."

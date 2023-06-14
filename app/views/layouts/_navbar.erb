@@ -1,0 +1,28 @@
+<nav>
+     <div class="navigation-header centered-content">
+          <a href="/" class="navigation-link-top">
+          <%= ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key]) == nil ? "Blogfactory Title" : ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key]).string  %>
+          </a>
+     </div>
+     <div class="navigation-divider"></div>
+     <div class="links">
+          <div class="navigation-category">
+               <div class="navigation-category-title navigation-object">Things</div>
+               <a href="/" class="navigation-link"> dododo </a>
+               <a href="/" class="navigation-link"> dododo </a>
+               <a href="/" class="navigation-link"> dododo </a>
+          </div>
+          <div class="navigation-category">
+               <div class="navigation-category-title navigation-object">Account</div>
+               <% if user_signed_in? %>
+                    <%= link_to "Administrative Building", "/admin" %>
+                    <%= link_to "Edit profile", edit_user_registration_path %>
+                    <%= link_to "Logout", destroy_user_session_path %>
+               <% else %>
+                    <%= link_to "Sign Up", new_user_registration_path %>
+	               <%= link_to "Sign In", new_user_session_path %>
+               <% end %>
+          </div>
+     </div>
+
+</nav>

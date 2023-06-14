@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
+		<title><%= @title %></title>
 
 	<!--
 	
 	Hello there, explorer!
 	Visit https://github.com/DiPS-Digital-Peer-Initiative/blogfactory to see the source code.
 
-  @sumukhprasad
+	@sumukhprasad
 
 	 -->
 
@@ -25,17 +25,23 @@
 
 	<body>
 
-	<main>
+	
 
-		<% if notice %>
-			<p class="alert alert-success"><%= notice %></p>
-		<% end %>
-		<% if alert %>
-			<p class="alert alert-danger"><%= alert %></p>
-		<% end %>
-		<%= yield %>
+	<div class="page-content">
+		<%= render :partial => "layouts/navbar" %>
+		<main>
+			<% if notice %>
+				<p class="alert alert-success"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+				<p class="alert alert-danger"><%= alert %></p>
+			<% end %>
+			
+			<%= yield %>
+		</main>
+	</div>
 
-	</main>
+	<div class="envsash">PreDVT Prototype<span> - </span></div>
 
 	</body>
 </html>

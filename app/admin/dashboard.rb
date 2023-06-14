@@ -4,6 +4,7 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc { I18n.t("active_admin.dashboard") } do
     para "<center><h1>Blogfactory Administration Pages</h3></center>".html_safe
+    para "<center><a href=\"/\">Visit page ></a></center>".html_safe
     columns do
       column do
         panel "Late-Breaking News About Blogfactory" do
