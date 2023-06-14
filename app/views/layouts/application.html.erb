@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><%= @title %></title>
+		<title><%= ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key]) == nil ? "Blogfactory Title" : ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key]).string %></title>
 
 	<!--
 	
