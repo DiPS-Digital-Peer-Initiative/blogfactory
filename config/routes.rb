@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
 	root :controller => 'index', :action => :index
+
+  resources :posts, param: :id do
+	end
+
 end
