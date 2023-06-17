@@ -1,3 +1,21 @@
-<h1><%= @article.title %></h1>
+<div class="post-header-block">
+     <div class="post-date-and-category"><%= @post.category.string %><br><%= @post.created_at.strftime("%B %d, %Y") %></div>
 
-<p><%= @article.body %></p>
+     <div class="post-heading"><%= @post.title %></div>
+
+     <div class="post-description"><%= @post.description %></div>
+</div>
+
+
+<%= @post.content %>
+
+<% if @orgdesc != nil && @orgname != nil %>
+     <div class="post-aboutsection">
+          <b>About <%= @orgname.string %></b><br>
+          <%= @orgdesc.string %>
+     </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "Edit", edit_post_path(@post) %>
+<% end %>

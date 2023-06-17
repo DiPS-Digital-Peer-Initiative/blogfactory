@@ -1,0 +1,39 @@
+<%= form_with model: post do |form| %>
+     <% if !@availablecategories.empty? %>
+          <div class="field">
+          
+               <% @post.errors.full_messages_for(:category).each do |message| %>
+                    <div class="destructive"><b><%= message %></b></div>
+               <% end %>
+               
+               
+               <%= form.collection_select :category_id, Category.all, :id, :string %>
+          </div>
+     <% end %>
+
+     <div class="field">
+          <% @post.errors.full_messages_for(:title).each do |message| %>
+               <div class="destructive"><b><%= message %></b></div>
+          <% end %>
+          <%= form.text_area :title, class: "post-form-title", placeholder: "Post title" %>
+     </div>
+
+     <div class="field">
+          <% @post.errors.full_messages_for(:description).each do |message| %>
+               <div class="destructive"><b><%= message %></b></div>
+          <% end %>
+          <%= form.text_area :description, class: "post-form-description", placeholder: "Post description" %>
+     </div>
+
+     <div class="field">
+          <% @post.errors.full_messages_for(:content).each do |message| %>
+               <div class="destructive"><b><%= message %></b></div>
+          <% end %>
+          <%= form.rich_text_area :content %>
+     </div>
+
+
+     <div class="actions">
+          <%= form.submit %>
+     </div>
+<% end %>

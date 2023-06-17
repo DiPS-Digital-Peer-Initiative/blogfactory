@@ -1,0 +1,19 @@
+<%= link_to post_path(post), class: "post_index_link spotlight-post" do %>
+          <style>
+          .spotlight-post-image {
+               background: url(<%= imagepath %>) no-repeat top;
+          }
+          </style>
+
+          <div class="spotlight-post-image-wrapper">
+               <div class="spotlight-post-image"></div>
+          </div>
+
+          <div class="spotlight-post-title-wrapper">
+               <div>
+                    <div class="post-date-and-category"><%= post.category.string %></div>
+                    <div class="post-index-title"><%= post.title %></div>
+               </div>
+               <div class="post-date-and-category"><%= post.created_at.strftime("%B %d, %Y") %></div>
+          </div>
+<% end %>
