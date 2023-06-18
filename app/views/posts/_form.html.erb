@@ -1,15 +1,21 @@
 <%= form_with model: post do |form| %>
      <% if !@availablecategories.empty? %>
           <div class="field">
-          
+               <b>Category:</b>
                <% @post.errors.full_messages_for(:category).each do |message| %>
                     <div class="destructive"><b><%= message %></b></div>
                <% end %>
-               
-               
                <%= form.collection_select :category_id, Category.all, :id, :string %>
           </div>
      <% end %>
+
+     <div class="field">
+          <b><%= form.label :header_image %></b><br />
+          <% @post.errors.full_messages_for(:header_image).each do |message| %>
+               <div class="destructive"><b><%= message %></b></div>
+          <% end %>
+          <%= form.file_field :header_image %>
+     </div>
 
      <div class="field">
           <% @post.errors.full_messages_for(:title).each do |message| %>

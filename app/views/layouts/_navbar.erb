@@ -9,11 +9,14 @@
           <div class="navigation-category">
                <div class="navigation-category-title navigation-object">Things</div>
                     <%= link_to "Posts", posts_path %>
+                    <% if user_signed_in? %>
+                         <%= link_to "Create a new Post", new_post_path %>
+                    <% end %>
           </div>
           <div class="navigation-category">
                <div class="navigation-category-title navigation-object">Account</div>
                <% if user_signed_in? %>
-                    <%= link_to "Administrative Building", "/admin" %>
+                    <%= link_to "Administrative Building", "/admin", target: "_blank" %>
                     <%= link_to "Edit profile", edit_user_registration_path %>
                     <%= link_to "Logout", destroy_user_session_path %>
                <% else %>

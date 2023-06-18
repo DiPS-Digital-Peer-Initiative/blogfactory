@@ -3,10 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+
+    @spotlightpost = Post.order("created_at").last
+    @recentposts = Post.all.length > 1 ? Post.order("created_at").reverse_order.drop(1)[...6] : []
     settingEntry = ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["org_name"][:key])
     @orgname = settingEntry == nil ? Rails.application.config_for(:settings)["org_name"][:value] : settingEntry.string 
-
-  
   end
 
   def show
@@ -56,6 +57,6 @@ class PostsController < ApplicationController
 
   private
 		def post_params
-			params.require(:post).permit(:title, :description, :content, :category_id)
+			params.require(:post).permit(:title, :description, :content, :category_id, :header_image)
 		end
 end

@@ -2,22 +2,14 @@
 <p>No articles. </p>
 <% else %>
 <h1>Spotlight</h1>
-<%= render "spotlightpost", post: @posts.first, imagepath: @imagepath %>
+<%= render "spotlightpost", post: @spotlightpost, imagepath: url_for(@spotlightpost.header_image) %>
 
-<h1>Featured</h1>
-zip-a-dee-doo-dah!
-
-<h1>More from <%= @orgname %></h1>
-zip-a-dee-doo-day!
-
-
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post_path(post), post_path(post) %>
-    </li>
-  <% end %>
-</ul>
+<h1>Recent</h1>
+<div class="recent-posts-grid">
+<% @recentposts.each do |post| %>
+  <%= render "recentpost", post: post, imagepath: url_for(post.header_image) %>
+<% end %>
+</div>
 <% end %>
 
 
