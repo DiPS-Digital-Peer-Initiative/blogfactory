@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_17_153858) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_19_004336) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -88,6 +88,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_153858) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -120,5 +128,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_153858) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "articles"
   add_foreign_key "posts", "categories"
 end
