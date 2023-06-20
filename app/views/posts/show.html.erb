@@ -29,10 +29,8 @@
 <% if @post.comments.empty? %>
      No comments yet.
 <% else %>
-????
-
-     <% @post.comments do |comment| %>
-          <%= render_partial "comments/comment", comment: comment %>
+     <% @post.comments.each do |comment| %>
+          <%= render "comments/comment", comment: comment %>
      <% end %>
 <% end %>
 
