@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    
     @orgdesc = ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["org_desc"][:key])
     @orgname = ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["org_name"][:key])
   end

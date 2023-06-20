@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
 	root :controller => 'posts', :action => :index
 
-  resources :posts, param: :id do
+  resources :posts do
+    resources :comments
 	end
 
 end

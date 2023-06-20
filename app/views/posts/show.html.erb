@@ -24,3 +24,18 @@
                     turbo_confirm: "Are you sure?"
                   } %>
 <% end %>
+
+<h2>Comments</h2>
+<% if @post.comments.empty? %>
+     No comments yet.
+<% else %>
+????
+
+     <% @post.comments do |comment| %>
+          <%= render_partial "comments/comment", comment: comment %>
+     <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+     <%= render 'comments/form' %>
+<% end %>
