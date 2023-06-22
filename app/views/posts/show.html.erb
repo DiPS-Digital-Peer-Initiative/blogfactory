@@ -4,6 +4,8 @@
      <div class="post-heading"><%= @post.title %></div>
 
      <div class="post-description"><%= @post.description %></div>
+
+     <div class="post-user">By <%= @post.user.name %></div>
 </div>
 
 <%= image_tag url_for(@post.header_image), class: "post-header-image" %>
