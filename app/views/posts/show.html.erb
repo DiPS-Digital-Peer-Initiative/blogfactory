@@ -5,7 +5,7 @@
 
      <div class="post-description"><%= @post.description %></div>
 
-     <div class="post-user">By <%= @post.user.name %></div>
+     <div class="post-user">By <%= link_to @post.user.name, user_path(@post.user.username) %></div>
 </div>
 
 <%= image_tag url_for(@post.header_image), class: "post-header-image" %>

@@ -5,8 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
-  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true
   
   has_many :posts, foreign_key: :user_id, primary_key: :id, dependent: :destroy
+  has_many :comments, foreign_key: :user_id, primary_key: :id, dependent: :destroy, :through => :posts
 end

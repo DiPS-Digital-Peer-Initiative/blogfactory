@@ -1,5 +1,5 @@
 <div class="comment">
-     <div class="comment-username">@someone says</div>
+     <div class="comment-username"><%= link_to comment.user.name, user_path(@post.user.username) %> says</div>
      <div class="comment-body"><%= comment.body %></div>
      <div class="post-date-and-category"><%= comment.created_at.strftime("%B %d, %Y") %></div>
 

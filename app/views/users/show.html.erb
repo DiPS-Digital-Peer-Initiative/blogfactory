@@ -1,0 +1,15 @@
+<div class="identity">
+<h1><%= @user.name %></h1>
+<div class="username-display">@<%= @user.username %></div>
+</div>
+
+<% if @user.posts.empty? %>
+<p>No articles. </p>
+<% else %>
+<h2>Posts</h2>
+<div class="recent-posts-grid">
+<% @user.posts.order("created_at").reverse_order.each do |post| %>
+  <%= render "posts/recentpost", post: post, imagepath: url_for(post.header_image) %>
+<% end %>
+</div>
+<% end %>

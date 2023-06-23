@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     resources :comments
 	end
 
+  resources :users, only: [:show, :update], param: :username do
+  end
+
 end
