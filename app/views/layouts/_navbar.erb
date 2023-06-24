@@ -1,7 +1,11 @@
 <nav>
      <div class="navigation-header centered-content">
           <a href="/" class="navigation-link-top">
-          <%= ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key]) == nil ? "Blogfactory Title" : ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key]).string  %>
+          <% if SiteImage.find_by(:name => Rails.application.config_for(:settings)["site_banner_image"][:key]) != nil %>
+               <%= image_tag (SiteImage.find_by(:name => Rails.application.config_for(:settings)["site_banner_image"][:key]).image), class: "navigation-header-image" %>
+          <% end %>
+
+          <%= ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key]) == nil ? Rails.application.config_for(:settings)["site_name"][:value] : ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key]).string  %>
           </a>
      </div>
      <div class="navigation-divider"></div>
@@ -21,9 +25,8 @@
                     <%= link_to "Logout", destroy_user_session_path %>
                <% else %>
                     <%= link_to "Sign Up", new_user_registration_path %>
-	               <%= link_to "Sign In", new_user_session_path %>
+                    <%= link_to "Sign In", new_user_session_path %>
                <% end %>
           </div>
      </div>
-
 </nav>
