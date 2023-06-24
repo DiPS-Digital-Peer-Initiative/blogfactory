@@ -1,15 +1,21 @@
 <% if @posts.empty? %>
 <p>No articles. </p>
 <% else %>
-<h1>Spotlight</h1>
-<%= render "spotlightpost", post: @spotlightpost, imagepath: url_for(@spotlightpost.header_image) %>
-
-<h1>Recent</h1>
-<div class="recent-posts-grid">
-<% @recentposts.each do |post| %>
-  <%= render "recentpost", post: post, imagepath: url_for(post.header_image) %>
-<% end %>
+<div class="posts-index-section">
+  <h1>Spotlight</h1>
+  <%= render "spotlightpost", post: @spotlightpost, imagepath: url_for(@spotlightpost.header_image) %>
 </div>
+
+<% if !@recentposts.empty? %>
+  <div class="posts-index-section">
+    <h1>Recent</h1>
+    <div class="recent-posts-grid">
+    <% @recentposts.each do |post| %>
+      <%= render "recentpost", post: post, imagepath: url_for(post.header_image) %>
+    <% end %>
+    </div>
+  </div>
+<% end %>
 <% end %>
 
 
