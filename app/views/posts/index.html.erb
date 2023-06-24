@@ -1,5 +1,5 @@
 <% if @posts.empty? %>
-<p>No articles. </p>
+<%= render "nopostsindex", post: @spotlightpost, imagepath: url_for(@spotlightpost.header_image) %>
 <% else %>
 <div class="posts-index-section">
   <h1>Spotlight</h1>
