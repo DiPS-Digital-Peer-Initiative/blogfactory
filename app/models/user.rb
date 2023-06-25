@@ -11,4 +11,8 @@ class User < ApplicationRecord
   
   has_many :posts, foreign_key: :user_id, primary_key: :id, dependent: :destroy
   has_many :comments, foreign_key: :user_id, primary_key: :id, dependent: :destroy, :through => :posts
+
+  has_one_attached :avatar
+
+  validates :avatar, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 end
