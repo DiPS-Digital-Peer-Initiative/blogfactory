@@ -1,8 +1,10 @@
 <div class="identity">
   <h1><%= @user.name %></h1>
   <div class="username-display">@<%= @user.username %></div>
-  <div class="username-display"><%= @user.about %></div>
-  <%= link_to "Edit", edit_user_registration_path %>
+  <div class="user-about-display"><%= @user.about %></div>
+  <% if user_signed_in? %>
+    <%= link_to "Edit", edit_user_registration_path %>
+  <% end %>
 </div>
 
 <% if @user.posts.empty? %>
