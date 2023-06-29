@@ -1,10 +1,29 @@
 <div class="identity">
-  <h1><%= @user.name %></h1>
-  <div class="username-display">@<%= @user.username %></div>
-  <div class="user-about-display"><%= @user.about %></div>
-  <% if user_signed_in? %>
-    <%= link_to "Edit", edit_user_registration_path %>
-  <% end %>
+
+
+  <div class="user-header">
+    <div class="user-header-avatar-container">
+      <%= image_tag @user_avatar_path, class: "user-avatar" %>
+    </div>
+
+    <div class="user-header-text-container">
+      <h1><%= @user.name %></h1>
+      <div class="username-display">@<%= @user.username %></div>
+      <% if (user_signed_in? && @user == current_user) %>
+        <%= link_to "Edit", edit_user_registration_path %>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-about-container">
+    <div class="user-about-title">About <%= @user.name %></div>
+    <div class="user-about-display">
+      <% if @user.about != nil %>
+        <%= @user.about %>
+      <% else %>
+        <div class="user-no-about"><%= (user_signed_in? && @user == current_user) ? "You have" : @user.name %> not added <%= (user_signed_in? && @user == current_user) ? "your" : "their" %> about section yet.</div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <% if @user.posts.empty? %>
