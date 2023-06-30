@@ -1,0 +1,2 @@
+module InkBlotHelper
+end
