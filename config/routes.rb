@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update], param: :username do
   end
 
-  resources :ink_blot do
+  resources :ask_a_peer do
   end
 
 end
