@@ -35,3 +35,21 @@ nav a
      text-transform: uppercase;
      font-weight: 900;
      color: rgba(0, 0, 0, 0.5);
+
+
+@media (prefers-color-scheme: dark)
+     nav a
+          &:hover
+               background-color: rgba(255, 255, 255, 0.05)   
+
+     .navigation-link-top
+          color: #fff !important
+          
+     .navigation-divider
+          background-color: rgba(255, 255, 255, 0.5)
+
+     .navigation-category
+          border-right: 3px solid rgba(255, 255, 255, 0.2);
+
+     .navigation-category-title
+          color: rgba(255, 255, 255, 0.75);

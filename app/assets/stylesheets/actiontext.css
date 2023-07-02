@@ -29,3 +29,22 @@
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+@media (prefers-color-scheme: dark) {
+  .trix-content {
+    color: #ddd;
+  }
+
+  trix-editor {
+    border: 1px solid #222 !important;
+    background-color: #111;
+  }
+
+  trix-toolbar .trix-button {
+    background: #ddd !important;
+  }
+
+  trix-editor:empty:not(:focus)::before {
+    color: #555;
+  }
+}
