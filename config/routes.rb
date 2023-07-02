@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update], param: :username do
   end
 
-  resources :ask_a_peer do
+  resources :ask_a_peer, only: [:new, :create] do
   end
 
 end

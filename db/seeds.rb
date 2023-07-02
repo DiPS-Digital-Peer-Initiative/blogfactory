@@ -11,6 +11,7 @@ settingsconfig = Rails.application.config_for(:settings)
 ActiveAdminSetting.create!(name: settingsconfig["site_name"][:key], string: settingsconfig["site_name"][:value])
 ActiveAdminSetting.create!(name: settingsconfig["org_name"][:key],  string: settingsconfig["org_name"][:value])
 ActiveAdminSetting.create!(name: settingsconfig["org_desc"][:key],  string: settingsconfig["org_desc"][:value])
+ActiveAdminSetting.create!(name: settingsconfig["aapq_default_email"][:key],  string: settingsconfig["aapq_default_email"][:value])
 
 for value in settingsconfig["categories"][:values] do
      Category.create!(string: value)

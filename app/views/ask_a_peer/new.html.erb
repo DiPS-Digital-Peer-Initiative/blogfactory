@@ -1,0 +1,31 @@
+<h1>Ask-A-Peer</h1>
+
+<p>
+</p>
+
+<%= form_with model: @aapq, url: ask_a_peer_index_path do |form| %>
+     <div class="field">
+          <% @aapq.errors.full_messages_for(:body).each do |message| %>
+               <div class="destructive"><b><%= message %></b></div>
+          <% end %>
+          <%= form.rich_text_area :body, placeholder: "Write your query..." %>
+     </div>
+
+     <div class="actions">
+          <%= form.submit value: "Ask a peer" %>
+     </div>
+<% end %>
+
+
+
+<script type="text/javascript">
+  (function() {
+    addEventListener("trix-initialize", function(e) {
+      const file_tools = document.querySelector(".trix-button-group--file-tools");
+      file_tools.remove();
+    })
+    addEventListener("trix-file-accept", function(e) {
+      e.preventDefault();
+    })
+  })();
+</script>

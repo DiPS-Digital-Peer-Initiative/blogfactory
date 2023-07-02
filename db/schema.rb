@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_162058) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_02_112506) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -82,6 +82,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_162058) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "ask_a_peer_questions", force: :cascade do |t|
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_ask_a_peer_questions_on_user_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "string"
     t.datetime "created_at", null: false
@@ -136,6 +144,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_162058) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "ask_a_peer_questions", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "categories"

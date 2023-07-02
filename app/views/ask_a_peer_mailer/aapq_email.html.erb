@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <style>
+          .question {
+               font-family: Georgia, 'Times New Roman', Times, serif
+          }
+
+          h2 {
+               border-bottom: 1px solid rgba(0, 0, 0, 0,25);
+          }
+
+          body {
+               background-color: #fff;
+          }
+     </style>
+</head>
+<body>
+
+     <h1>Ask-a-Peer Query</h1>
+
+     <h2>Identity</h2>
+     Name: <%= @aapq.user.name %><br>
+     E-mail: <%= link_to @aapq.user.email, "mailto:"+@aapq.user.email %>
+     
+
+     <h2>Question</h2>
+     <div class="question">
+     <%= @aapq.body %>
+     </div>
+
+     <h2>Actions</h2>
+     sewwww kewwwwl!
+</body>
+</html>
