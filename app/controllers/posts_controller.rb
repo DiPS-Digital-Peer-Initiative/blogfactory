@@ -6,8 +6,13 @@ class PostsController < ApplicationController
 
     @spotlightpost = Post.order("created_at").last
     @recentposts = Post.all.length > 1 ? Post.order("created_at").reverse_order.drop(1)[...6] : []
-    settingEntry = ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["org_name"][:key])
-    @orgname = settingEntry == nil ? Rails.application.config_for(:settings)["org_name"][:value] : settingEntry.string 
+
+
+    @otherposts = Post.all.length > 7 ? Post.order("created_at").reverse_order.drop(1)[6...11] : []
+
+
+    settingEntry = ActiveAdminSetting.find_by(:name => Rails.application.config_for(:settings)["site_name"][:key])
+    @blogname = settingEntry == nil ? Rails.application.config_for(:settings)["site_name"][:value] : settingEntry.string 
   end
 
   def show

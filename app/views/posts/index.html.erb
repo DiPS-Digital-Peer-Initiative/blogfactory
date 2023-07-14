@@ -17,11 +17,15 @@
   </div>
 <% end %>
 
-<div class="post-list-grid">
-  <% @posts.each do |post| %>
-      <%= render "postlistitem", post: post, imagepath: url_for(post.header_image) %>
-  <% end %>
-</div>
+<% if !@otherposts.empty? %>
+  <h1>More from <%= @blogname %></h1>
+  <div class="post-list-grid">
+    <% @otherposts.each do |post| %>
+        <%= render "postlistitem", post: post, imagepath: url_for(post.header_image) %>
+    <% end %>
+  </div>
+<% end %>
+
 <% end %>
 
 
