@@ -109,6 +109,45 @@
      text-overflow: ellipsis
      display: -webkit-box
 
+.post-list-item
+     display: flex
+     flex-direction: row
+     padding-bottom: 32px;
+     padding-left: 0px;
+     padding-right: 0px;
+     padding-top: 32px
+     border-bottom: 1px solid rgba(0, 0, 0, 0.25)
+     &:last-of-type
+          border-bottom: none
+     
+
+.post-list-item-image-wrapper
+     flex-basis: 300px
+     width: 300px
+     height: 250px
+     flex-shrink: 0
+     z-index: 0
+     border-radius: 16px
+     overflow: hidden
+     .post-list-item-image
+          background-size: cover
+          height: 100%
+          object-fit: cover
+          background-position: center
+          background-repeat: no-repeat
+          width: 100%
+          -webkit-transition: -webkit-transform 0.5s
+          transition: transform 0.5s, -webkit-transform 0.5s
+
+.post-list-item-title-wrapper
+     padding: 25px
+     .post-list-item-index-title
+          font-size: 24px;
+          line-height: 1.16667;
+          font-weight: 700;
+          color: #000
+          margin-top: 10px
+          margin-bottom: 10px
 
 @media (prefers-color-scheme: dark)
      .spotlight-post

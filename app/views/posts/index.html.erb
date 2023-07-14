@@ -16,6 +16,12 @@
     </div>
   </div>
 <% end %>
+
+<div class="post-list-grid">
+  <% @posts.each do |post| %>
+      <%= render "postlistitem", post: post, imagepath: url_for(post.header_image) %>
+  <% end %>
+</div>
 <% end %>
 
 

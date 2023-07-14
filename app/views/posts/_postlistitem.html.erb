@@ -1,0 +1,13 @@
+<%= link_to post_path(post), class: "post-index-link post-list-item" do %>
+          <div class="post-list-item-image-wrapper">
+               <div class="post-list-item-image" style="background-image: url(<%= imagepath %>);"></div>
+          </div>
+
+          <div class="post-list-item-title-wrapper">
+               <div>
+                    <div class="post-date-and-category"><%= post.category.string %></div>
+                    <div class="post-list-item-index-title"><%= post.title %></div>
+               </div>
+               <div class="post-date-and-category"><%= post.created_at.strftime("%B %d, %Y") %></div>
+          </div>
+<% end %>
