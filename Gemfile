@@ -55,6 +55,9 @@ gem 'activeadmin'
 
 gem 'active_storage_validations'
 
+# search
+gem 'ransack'
+
 # ------------------------------------ End Other Imports -----
 
 
